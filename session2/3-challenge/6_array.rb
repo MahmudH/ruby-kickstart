@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? arr
+	str = arr.join('')
+	length = str.length
+	return false if length <= 1
+	Math.sqrt(length).to_i.downto(2).each {|i| return false if length % i == 0}
+	true
+end
